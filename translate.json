@@ -1,0 +1,174 @@
+{
+    "en": {
+        "prefix": "Kats ",
+        "test": {
+            "prefix": "Test",
+            "embed": {
+                "test": {
+                    "title": "Test Success!",
+                    "description": "Ping: {}",
+                    "color": 3066993
+                }
+            }
+        },
+        "anhae": {
+            "prefix": "anhae"
+        },
+        "clear": {
+            "prefix": "clear",
+            "cleared": "clear {} messages.",
+            "embed": {
+                "error_not_int": {
+                    "title": "Error!",
+                    "description": "It's not an integer!",
+                    "color": 15158332
+                },
+                "error_no_permission": {
+                    "title": "Error!",
+                    "description": "You don't have permission!",
+                    "color": 15158332
+                }
+            }
+        },
+        "music": {
+            "play_prefix": "play",
+            "stop_prefix": "stop",
+            "pause_prefix": "pause",
+            "skip_prefix": "skip",
+            "volume_prefix": "vol",
+            "added_music": "{entry} is added.",
+            "give_up": "Um... Well... :(",
+            "choice_music": "Is this what you're looking for?\nIf it is, Click ⭕, If not, Click ❌, If you want to exit, Click ⛔.\nhttps://www.youtube.com/watch?v={0[id]}",
+            "skip_voted": "Skip vote added. Current skip votes: {}/3",
+            "now_playing": "Now Playing: {0[author]} - {0[song_name]}. C'mon {0[username]}!",
+            "embed": {
+                "error_author_not_in_voice": {
+                    "title": "Error!",
+                    "description": "Get into the voice channel!",
+                    "color": 15158332
+                },
+                "error_time_out": {
+                    "title": "Error!",
+                    "description": "Timeout",
+                    "color": 15158332
+                },
+                "error_not_playing": {
+                    "title": "Error!",
+                    "description": "No songs are playing.",
+                    "color": 15158332
+                },
+                "error_already_voted": {
+                    "title": "Error!",
+                    "description": "You already voted.",
+                    "color": 15158332
+                },
+                "error_not_int": {
+                    "title": "Error!",
+                    "description": "This is not int!",
+                    "color": 15158332
+                },
+                "skip_by_requester": {
+                    "title": "Info",
+                    "description": "Requester/Admin wants to skip. So skipping...",
+                    "color": 3447003
+                },
+                "skip_cause_over_three": {
+                    "title": "Info",
+                    "description": "There are three or more people who want to skip the song. Skip the song.",
+                    "color": 3447003
+                },
+                "success_change_vol": {
+                    "title": "Success!",
+                    "description": "Change the volume to {vol}.",
+                    "color": 3066993
+                }
+            }
+        }
+    },
+    "ko": {
+        "prefix": "카츠야",
+        "test": {
+            "prefix": "테스트",
+            "embed": {
+                "test": {
+                    "title": "테스트 성공!",
+                    "description": "핑: {}",
+                    "color": 3066993
+                }
+            }
+        },
+        "anhae": {
+            "prefix": "안해"
+        },
+        "clear": {
+            "prefix": "청소",
+            "cleared": "{} 개의 메시지들을 삭제 하였습니다.",
+            "embed": {
+                "error_not_int": {
+                    "title": "오류!",
+                    "description": "정수가 아닙니다!",
+                    "color": 15158332
+                },
+                "error_no_permission": {
+                    "title": "오류!",
+                    "description": "권한이 없습니다!",
+                    "color": 15158332
+                }
+            }
+        },
+        "music": {
+            "play_prefix": "재생",
+            "stop_prefix": "정지",
+            "pause_prefix": "일시정지",
+            "skip_prefix": "스킵",
+            "volume_prefix": "볼륨",
+            "added_music": "{entry} (이)가 추가되었습니다.",
+            "give_up": "음... 그래요... :(",
+            "choice_music": "이것이 당신이 찾으시는것 입니까?\n맞다면 ⭕, 아니라면 ❌, 끝내시려면 ⛔를 눌러주세요.\nhttps://www.youtube.com/watch?v={}",
+            "skip_voted": "스킵이 추가되었습니다. 현재 스킵 수: {}/3",
+            "now_playing": "{0[author]} - {0[song_name]} (을)를 재생합니다. 빨리와요, {0[username]}님!",
+            "embed": {
+                "error_author_not_in_voice": {
+                    "title": "오류!",
+                    "description": "먼저 음성 채널에 들어가시죠",
+                    "color": 15158332
+                },
+                "error_time_out": {
+                    "title": "오류!",
+                    "description": "시간 초과",
+                    "color": 15158332
+                },
+                "error_not_playing": {
+                    "title": "오류!",
+                    "description": "노래를 재생하고 있지 않습니다.",
+                    "color": 15158332
+                },
+                "error_already_voted": {
+                    "title": "오류!",
+                    "description": "이미 스킵을 추가하셨습니다.",
+                    "color": 15158332
+                },
+                "error_not_int": {
+                    "title": "오류!",
+                    "description": "정수가 아닙니다!",
+                    "color": 15158332
+                },
+                "skip_by_requester": {
+                    "title": "정보",
+                    "description": "신청자/어드민이 노래를 스킵하였습니다.",
+                    "color": 3447003
+                },
+                "skip_cause_over_three": {
+                    "title": "정보",
+                    "description": "노래를 스킵하길 원하는 사람이 3명 이상입니다. 노래를 스킵합니다.",
+                    "color": 3447003
+                },
+                "success_change_vol": {
+                    "title": "성공!",
+                    "description": "볼륨을 {vol}(으)로 번경하였습니다.",
+                    "color": 3066993
+                }
+            }
+        }
+    }
+}

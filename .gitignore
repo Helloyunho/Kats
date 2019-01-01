@@ -1,0 +1,13 @@
+node_modules/
+package-lock.json
+tokens.js
+yarn.lock
+.electromonrc
+.vscode
+google_assistant
+for_gui/semantic/dist/*
+!for_gui/semantic/dist/semantic.*
+for_gui/semantic/src/*
+for_gui/semantic/tasks/*
+for_gui/semantic/gulpfile.js
+web/.next

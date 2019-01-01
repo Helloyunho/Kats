@@ -1,0 +1,64 @@
+{
+  "name": "kats_js",
+  "version": "1.0.0",
+  "description": "DISCORD BOTTTT",
+  "main": "main.js",
+  "dependencies": {
+    "@material-ui/core": "^3.6.2",
+    "@material-ui/icons": "^3.0.1",
+    "@zeit/next-css": "^1.0.1",
+    "async-while": "^1.1.0",
+    "axios": "^0.18.0",
+    "bufferutil": "^3.0.5",
+    "chokidar": "^2.0.4",
+    "deasync": "^0.1.13",
+    "discord.js": "^11.3.2",
+    "erlpack": "^0.1.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "file-loader": "^3.0.1",
+    "fomantic-ui": "^2.6.3",
+    "glob": "^7.1.2",
+    "import-modules": "^1.1.0",
+    "jquery": "^3.3.1",
+    "jss": "^9.8.7",
+    "next": "^7.0.2",
+    "node-opus": "^0.3.1",
+    "passport": "^0.4.0",
+    "passport-discord": "^0.1.3",
+    "prop-types": "^15.6.2",
+    "python-format": "^1.0.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-jss": "^8.6.1",
+    "redis": "^2.8.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.84.0",
+    "signale": "^1.3.0",
+    "sodium": "^3.0.2",
+    "string-format": "^2.0.0",
+    "typeface-roboto": "0.0.54",
+    "url-loader": "^1.1.2",
+    "uws": "^10.148.0",
+    "youtube-search": "^1.1.3",
+    "ytdl-core": "^0.25.2"
+  },
+  "devDependencies": {
+    "electron": "^2.0.7"
+  },
+  "scripts": {
+    "start": "electron .",
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.helloyunho.pw/Helloyunho/Kats_Bot"
+  },
+  "keywords": [
+    "Kats",
+    "discord",
+    "bot"
+  ],
+  "author": "Helloyunho",
+  "license": "MIT"
+}
