@@ -2,7 +2,7 @@
 
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-> Add some AWESOME features on your Discord! (Stil W.I.P)
+> Add some AWESOME features on your Discord! (Still W.I.P)
 
 ## Table of Contents
 
