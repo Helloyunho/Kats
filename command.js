@@ -88,58 +88,58 @@ module.exports = class {
   }
 
   async ready () {
-
+    return undefined
   }
 
   async message () {
-
+    return undefined
   }
 
   async channelCreate () {
-
+    return undefined
   }
 
   async channelDelete () {
-
+    return undefined
   }
 
   async channelUpdate () {
-
+    return undefined
   }
 
   async disconnect () {
-
+    return undefined
   }
 
   async guildCreate () {
-
+    return undefined
   }
 
   async guildDelete () {
-
+    return undefined
   }
 
   async guildMemberAdd () {
-
+    return undefined
   }
 
   async guildMemberRemove () {
-
+    return undefined
   }
 
   async guildUpdate () {
-
+    return undefined
   }
 
   async messageDelete () {
-
+    return undefined
   }
 
   async messageDeleteBulk () {
-
+    return undefined
   }
 
   async messageUpdate () {
-
+    return undefined
   }
 }

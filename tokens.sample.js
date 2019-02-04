@@ -8,3 +8,6 @@ module.exports.discordClientID = '' // Your bot's client ID
 module.exports.discordClientSecret = '' // Your bot's client secret
 module.exports.mainURL = '' // Your bot site's main URL(And you should add 'https://[yoururl]/login/callback' to your bot's redirect url)
 module.exports.youtubeToken = '' // Youtube API token
+module.exports.sentry = {
+  // Same as the sentry setting
+}

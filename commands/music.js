@@ -28,7 +28,7 @@ module.exports = class extends command {
         url = msg.content.indexOf(url)
         url = msg.content.slice(url)
 
-        if (url.search(/^https?:\/\/(www.youtube.com|youtube.com)\$/) !== -1) {
+        if (/^https?:\/\/(www.youtube.com|youtube.com)\$/.test(url)) {
           state.songs.push(new this.client.VoiceEntry(msg, url))
           if (state.firstCall) {
             state.audioPlayer()
@@ -80,7 +80,7 @@ module.exports = class extends command {
       } else if (msgPrefix === this.translate[this.lang]['music']['stop_prefix']) {
         let state = this.client.voiceState[msg.guild.id]
         state.voice.disconnect()
-        delete this.voiceState[msg.guild.id]
+        delete this.client.voiceState[msg.guild.id]
       } else if (msgPrefix === this.translate[this.lang]['music']['skip_prefix']) {
         let state = this.client.voiceState[msg.guild.id]
 
@@ -138,7 +138,7 @@ module.exports = class extends command {
         }
         state.current.player.setVolume(volume / 100)
         state.volume = volume / 100
-        let msgDel = await msg.channel.send({embed: this.embedWVars('music', 'success_change_vol', {vol: volume})})
+        let msgDel = await msg.channel.send({embed: this.embedWVars('music', 'success_change_vol', volume)})
         msgDel.delete(5000)
       } else if (msgPrefix === this.translate[this.lang]['music']['pause_prefix']) {
         let state = this.client.voiceState[msg.guild.id]

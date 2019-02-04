@@ -7,7 +7,6 @@ if (tokens.discordTest) {
   bot.login(tokens.discord)
 }
 
-
 process.on('exit', () => {
   bot.destroy()
 })

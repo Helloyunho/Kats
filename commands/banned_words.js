@@ -36,7 +36,7 @@ module.exports = class extends command {
     }
   }
 
-  messageUpdate (_, msg) {
+  async messageUpdate (_, msg) {
     if (!msg.channel.nsfw) {
       this.redis.smembers(`${msg.guild.id}:bw`, (err, reply) => {
         if (err) {
