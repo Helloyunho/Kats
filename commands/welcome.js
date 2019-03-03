@@ -1,14 +1,14 @@
 const command = require('../command')
 
 module.exports = class extends command {
-  guildMemberAdd (member) {
+  async guildMemberAdd (member) {
     this.redis.get(`welcome:${member.guild.id}:channel`, (err, reply) => {
       if (err) {
         this.client.console.error(err)
         return undefined
       }
-      let channel = this.member.guild.channels.find('id', reply)
-      this.redis.get(`welcome:${member.guild.id}:content`, (err, replyy) => {
+      let channel = member.guild.channels.get(reply)
+      this.redis.get(`welcome:${member.guild.id}:message`, (err, replyy) => {
         if (err) {
           this.client.console.error(err)
           return undefined

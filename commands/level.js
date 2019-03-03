@@ -7,12 +7,17 @@ const getRandomIntInclusive = (min, max) => {
 }
 
 module.exports = class extends command {
+  constructor (...args) {
+    super(...args)
+    this.noPrefix = true
+  }
+
   getXpFromLevel (n) {
     return 5 * (n ** 2) + 50 * n + 100
   }
 
-  getLevelFromXp (x) {
-    let userXp = Number(x)
+  getLevelFromXp (xp) {
+    let userXp = Number(xp)
     let level = 0
     while (userXp >= this.getXpFromLevel(level)) {
       userXp -= this.getXpFromLevel(level)
@@ -22,20 +27,20 @@ module.exports = class extends command {
   }
 
   async message (msg) {
-    this.redis.get(`${msg.guild.id}:player:${msg.author.id}:nope`, (err, res) => {
+    this.redis.get(`${msg.guild.id}:player:${msg.author.id}:nope`, (err, nope) => {
       if (err) {
         console.error(err)
         return undefined
       }
-      if (!res) {
-        this.redis.get(`${msg.guild.id}:player:${msg.author.id}:xp`, (err, rres) => {
+      if (!nope) {
+        this.redis.get(`${msg.guild.id}:player:${msg.author.id}:xp`, (err, xp) => {
           if (err) {
             console.error(err)
             return undefined
           }
           let authorXp
-          if (rres) {
-            authorXp = Number(rres)
+          if (xp) {
+            authorXp = Number(xp)
           } else {
             authorXp = 0
           }
@@ -44,21 +49,21 @@ module.exports = class extends command {
           this.redis.incrby(`${msg.guild.id}:player:${msg.author.id}:xp`, getRandomIntInclusive(15, 25))
           this.redis.set(`${msg.guild.id}:player:${msg.author.id}:nope`, 1)
           this.redis.expire(`${msg.guild.id}:player:${msg.author.id}:nope`, 60)
-          this.redis.get(`${msg.guild.id}:player:${msg.author.id}:xp`, (err, rrres) => {
+          this.redis.get(`${msg.guild.id}:player:${msg.author.id}:xp`, (err, xp) => {
             if (err) {
               console.error(err)
               return undefined
             }
-            let level = this.getLevelFromXp(Number(rrres))
+            let level = this.getLevelFromXp(Number(xp))
             let sendThing
             if (oldLevel !== level) {
-              this.redis.get(`${msg.guild.id}:level_up_message`, (err, rrrres) => {
+              this.redis.get(`${msg.guild.id}:level_up_message`, (err, message) => {
                 if (err) {
                   console.error(err)
                   return undefined
                 }
-                if (rrrres) {
-                  sendThing = rrrres.replace('{user}', msg.author.toString())
+                if (message) {
+                  sendThing = message.replace('{user}', msg.author.toString()).replace('{level}', level)
                   msg.channel.send(sendThing)
                 }
               })

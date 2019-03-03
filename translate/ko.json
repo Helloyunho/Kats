@@ -40,6 +40,7 @@
         "choice_music": "이것이 당신이 찾으시는것 입니까?\n맞다면 ⭕, 아니라면 ❌, 끝내시려면 ⛔를 눌러주세요.\nhttps://www.youtube.com/watch?v={}",
         "skip_voted": "스킵이 추가되었습니다. 현재 스킵 수: {}/3",
         "now_playing": "{0[author]} - {0[song_name]} (을)를 재생합니다. 빨리와요, {0[username]}님!",
+        "current_vol": "Current volume: {}%",
         "embed": {
             "error_author_not_in_voice": {
                 "title": "오류!",
@@ -83,12 +84,12 @@
             }
         }
     },
-    "encode": {
-        "prefix": "인코딩",
+    "encrypt": {
+        "prefix": "암호화",
         "embed": {
             "error_invaild_type": {
                 "title": "오류!",
-                "description": "그런 종류가 없습니다. 저는 이것들로 인코딩 할 수 있어요: ```md5, base64, ascii, sha256,\nrsa(pkcs8 포맷 public pem 파일을 같이 보내세요), aes256(아무 파일에다 암호를 써서 같이 보내세요)```",
+                "description": "그런 종류가 없습니다. 저는 이것들로 암호화 할 수 있어요: ```md5, base64, ascii, sha256,\nrsa(pkcs8 포맷 public pem 파일을 같이 보내세요), aes256(아무 파일에다 암호를 써서 같이 보내세요)```",
                 "color": 15158332
             },
             "error_no_content": {
@@ -103,17 +104,17 @@
             },
             "success": {
                 "title": "성공!",
-                "description": "인코딩 됨: `{}`",
+                "description": "암호화 됨: `{}`",
                 "color": 3066993
             }
         }
     },
-    "decode": {
-        "prefix": "디코딩",
+    "decrypt": {
+        "prefix": "복호화",
         "embed": {
             "error_invaild_type": {
                 "title": "오류!",
-                "description": "그런 종류가 없습니다. 저는 이것들을 디코딩 할 수 있어요: ```base64, ascii,\nrsa(pkcs8 포맷 private key 파일을 같이 보내세요), aes256(아무 파일에다 암호를 써서 같이 보내세요)```",
+                "description": "그런 종류가 없습니다. 저는 이것들을 복호화 할 수 있어요: ```base64, ascii,\nrsa(pkcs8 포맷 private key 파일을 같이 보내세요), aes256(아무 파일에다 암호를 써서 같이 보내세요)```",
                 "color": 15158332
             },
             "error_no_content": {
@@ -128,7 +129,7 @@
             },
             "success": {
                 "title": "성공!",
-                "description": "디코딩 된 것: `{}`",
+                "description": "복호화 됨: `{}`",
                 "color": 3066993
             }
         }

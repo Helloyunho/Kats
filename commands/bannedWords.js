@@ -1,9 +1,10 @@
 const command = require('../command')
 
 module.exports = class extends command {
-  constructor (client) {
-    super(client)
+  constructor (...args) {
+    super(...args)
     this.noBlack = true
+    this.noPrefix = true
   }
 
   async message (msg) {
@@ -11,10 +12,6 @@ module.exports = class extends command {
       this.redis.smembers(`${msg.guild.id}:bw`, (err, reply) => {
         if (err) {
           console.error(err)
-        }
-
-        if (reply === []) {
-          return
         }
 
         this.redis.get(`${msg.guild.id}:bw:msg`, (err, replyy) => {
@@ -51,7 +48,7 @@ module.exports = class extends command {
           if (err) {
             console.error(err)
           }
-          
+
           if (!replyy) {
             replyy = 'BANNED WORD!!!! / 금지 된 단어!!! {user}'
           }

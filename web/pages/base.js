@@ -1,6 +1,6 @@
 import React from 'react'
-import Router from 'next/router'
 import 'semantic-ui-css/semantic.min.css'
+import Link from 'next/link'
 import { Menu, Container, Icon, Dropdown, Image } from 'semantic-ui-react'
 
 const styles = {
@@ -12,35 +12,19 @@ class Base extends React.Component {
     this.state = {anchorEl: null}
   }
 
-  OnLoginButtonClick = () => {
-    Router.push({
-      pathname: '/login'
-    })
-  }
-
-  OnServerButtonClick = () => {
-    Router.push({
-      pathname: '/guilds'
-    })
-  }
-
-  OnHomeButtonClick = () => {
-    Router.push({
-      pathname: '/'
-    })
-  }
-
   render () {
     return (
       <React.Fragment>
         <Menu attached='top' stackable>
           <Container>
-            <Menu.Item
-              name='home'
-              as='a'
-              onClick={this.OnHomeButtonClick}>
-              <Icon name='home' /> Home
-            </Menu.Item>
+            <Link as='/' passHref>
+              <Menu.Item
+                name='home'
+                as='a'
+                onClick={this.OnHomeButtonClick}>
+                <Icon name='home' /> Home
+              </Menu.Item>
+            </Link>
             <Menu.Menu position='right'>
               {typeof this.props.datas.user !== 'undefined' ? (
                 <Dropdown item trigger={(
@@ -54,21 +38,27 @@ class Base extends React.Component {
                   </span>
                   )} pointing>
                   <Dropdown.Menu>
-                    <Dropdown.Item onClick={this.OnServerButtonClick}>
-                      Servers
-                    </Dropdown.Item>
-                    <Dropdown.Item>
-                      Logout
-                    </Dropdown.Item>
+                    <Link as='/guilds' passHref>
+                      <Dropdown.Item onClick={this.OnServerButtonClick}>
+                        Servers
+                      </Dropdown.Item>
+                    </Link>
+                    <Link as='/logout' passHref>
+                      <Dropdown.Item onClick={this.OnLogoutButtonClick}>
+                        Logout
+                      </Dropdown.Item>
+                    </Link>
                   </Dropdown.Menu>
                 </Dropdown>
               ) : (
-                <Menu.Item
-                  name='login'
-                  as='a'
-                  onClick={this.OnLoginButtonClick}>
-                  <Icon name='sign in' /> Login
-                </Menu.Item>
+                <Link as='/login' passHref>
+                  <Menu.Item
+                    name='login'
+                    as='a'
+                    onClick={this.OnLoginButtonClick}>
+                    <Icon name='sign in' /> Login
+                  </Menu.Item>
+                </Link>
               )}
             </Menu.Menu>
           </Container>

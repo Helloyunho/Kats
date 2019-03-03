@@ -40,6 +40,7 @@
         "choice_music": "Is this what you're looking for?\nIf it is, Click ⭕, If not, Click ❌, If you want to exit, Click ⛔.\nhttps://www.youtube.com/watch?v={0[id]}",
         "skip_voted": "Skip vote added. Current skip votes: {}/3",
         "now_playing": "Now Playing: {0[author]} - {0[song_name]}. C'mon {0[username]}!",
+        "current_vol": "Current volume: {}%",
         "embed": {
             "error_author_not_in_voice": {
                 "title": "Error!",
@@ -83,12 +84,12 @@
             }
         }
     },
-    "encode": {
-        "prefix": "encode",
+    "encrypt": {
+        "prefix": "encrypt",
         "embed": {
             "error_invaild_type": {
                 "title": "Error!",
-                "description": "Type is invaild. I can encode with these: ```md5, base64, ascii, sha256,\nrsa(send with pkcs8 format public pem file), aes256(send with plain text with password file)```",
+                "description": "Type is invaild. I can encrypt with these: ```md5, base64, ascii, sha256,\nrsa(send with pkcs8 format public pem file), aes256(send with plain text with password file)```",
                 "color": 15158332
             },
             "error_no_content": {
@@ -103,17 +104,17 @@
             },
             "success": {
                 "title": "Success!",
-                "description": "encoded: `{}`",
+                "description": "encrypted: `{}`",
                 "color": 3066993
             }
         }
     },
-    "decode": {
-        "prefix": "decode",
+    "decrypt": {
+        "prefix": "decrypt",
         "embed": {
             "error_invaild_type": {
                 "title": "Error!",
-                "description": "Type is invaild. I can decode with these: ```base64, ascii,\nrsa(send with pkcs8 format private key file), aes256(send with plain text with password file)```",
+                "description": "Type is invaild. I can decrypt with these: ```base64, ascii,\nrsa(send with pkcs8 format private key file), aes256(send with plain text with password file)```",
                 "color": 15158332
             },
             "error_no_content": {
@@ -128,7 +129,7 @@
             },
             "success": {
                 "title": "Success!",
-                "description": "decoded: `{}`",
+                "description": "decrypted: `{}`",
                 "color": 3066993
             }
         }

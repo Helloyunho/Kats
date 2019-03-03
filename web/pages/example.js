@@ -1,7 +1,9 @@
+/* eslint-disable */
+// Delete this and top commant
 import React from 'react'
 import Base from './base'
 
-class Index extends React.Component {
+class CHANGE extends React.Component {
   static getInitialProps ({ query: datas }) {
     return { datas }
   }
@@ -20,4 +22,4 @@ class Index extends React.Component {
   }
 }
 
-export default Index
+export default CHANGE

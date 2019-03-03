@@ -1,14 +1,15 @@
 const format = require('string-format')
-const deasync = require('deasync')
+const { promisify } = require('util')
 
 module.exports = class {
   constructor (client) {
     this.client = client
-    this.global = false
     this.translate = null
     this.lang = 'en'
     this.noBlack = false
     this.redis = this.client.redis
+    this.noPrefix = false
+    this.forceEnable = false
   }
 
   getPrefix (codename, msg) {
@@ -26,65 +27,37 @@ module.exports = class {
 
   embedWVars (codename, embedType, ...args) {
     let embed = Object.assign({}, this.translate[this.lang][codename]['embed'][embedType])
-
-    let done = false
-    let num = 0
     if (args.length > 0) {
       Object.keys(embed).forEach((x) => {
-        embed[x] = format(String(embed[x]), args)
-        num++
-        if (num === Object.keys(embed).length) {
-          done = true
+        if (args.length === 1 && typeof args[0] === 'object') {
+          embed[x] = format(String(embed[x]), args[0])
+        } else {
+          embed[x] = format(String(embed[x]), args)
         }
       })
-    } else {
-      done = true
     }
-    deasync.loopWhile(() => {
-      return !done
-    })
     return embed
   }
 
   textWVars (codename, Type, ...args) {
     let text = this.translate[this.lang][codename][Type]
-
-    let done = false
     if (args.length > 0) {
       if (args.length === 1 && typeof args[0] === 'object') {
         text = format(String(text), args[0])
       } else {
         text = format(String(text), args)
       }
-      done = true
-    } else {
-      done = true
     }
-    deasync.loopWhile(() => {
-      return !done
-    })
     return text
   }
 
-  updateLang (server) {
-    let done = false
-    this.redis.get(`${server}:lang`, (err, reply) => {
-      if (err) {
-        console.error(err)
-        done = true
-      }
-      if (!reply) {
-        this.lang = 'en'
-        done = true
-      } else {
-        this.lang = reply
-        done = true
-      }
-    })
-    deasync.loopWhile(() => {
-      return !done
-    })
-    return done
+  async updateLang (server) {
+    let lang = await promisify(this.redis.get).bind(this.client.redis)(`${server}:lang`)
+    if (lang !== 'ko') {
+      this.lang = 'en'
+    } else {
+      this.lang = 'ko'
+    }
   }
 
   async ready () {
