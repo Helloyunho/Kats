@@ -1,6 +1,8 @@
+const ytdl = require('ytdl-core')
+
 module.exports = {
   VoiceState: class VoiceState {
-    constructor (voice, msg) {
+    constructor (voice, msg, client) {
       this.voice = voice
       this.current = undefined
       this.songs = []
@@ -18,6 +20,7 @@ module.exports = {
         this.current = this.songs.shift()
         if (!this.current) {
           this.firstCall = true
+          this.voice.disconnect()
           return undefined
         }
         this.current.data = await this.current.getData()

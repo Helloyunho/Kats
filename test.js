@@ -1,11 +1,23 @@
 const tokens = require('./tokens')
 const bot = require('./bot')
 
+let token
+
 if (tokens.discordTest) {
-  bot.login(tokens.discordTest)
+  token = tokens.discordTest
 } else {
-  bot.login(tokens.discord)
+  token = tokens.discord
 }
+
+bot.login(token).then(_ => {
+  bot.user.setPresence({
+    game: {
+      name: 'Testing..',
+      type: 'WATCHING'
+    },
+    status: 'online',
+  })
+})
 
 process.on('exit', () => {
   bot.destroy()

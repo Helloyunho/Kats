@@ -66,6 +66,7 @@ const loginCheck = (req, res, next) => {
   req.loggined = req.isAuthenticated()
   if (req.loggined) {
     req.datas.user = req.user
+    delete req.datas.user.accessToken
     next()
   } else {
     passport.authenticate('discord', {
@@ -94,7 +95,6 @@ app.prepare()
       if (req.isAuthenticated()) {
         req.datas.user = req.user
       }
-      delete req.datas.user.accessToken
       return app.render(req, res, '/', req.datas)
     })
 

@@ -40,7 +40,7 @@
         "choice_music": "이것이 당신이 찾으시는것 입니까?\n맞다면 ⭕, 아니라면 ❌, 끝내시려면 ⛔를 눌러주세요.\nhttps://www.youtube.com/watch?v={}",
         "skip_voted": "스킵이 추가되었습니다. 현재 스킵 수: {}/3",
         "now_playing": "{0[author]} - {0[song_name]} (을)를 재생합니다. 빨리와요, {0[username]}님!",
-        "current_vol": "Current volume: {}%",
+        "current_vol": "현재 볼륨: {}%",
         "embed": {
             "error_author_not_in_voice": {
                 "title": "오류!",
