@@ -4,7 +4,11 @@ const dev = process.env.NODE_ENV === 'development'
 
 const sharder = new ShardingManager('./src/index.js', {
   respawn: config.shard.respawn,
-  token: dev ? config.devToken : config.token,
+  token: dev
+    ? config.devToken
+      ? config.devToken
+      : config.token
+    : config.token,
   totalShards: config.shard.count
 })
 

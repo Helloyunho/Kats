@@ -133,4 +133,8 @@ class Kats extends Client {
 }
 
 const client = new Kats()
-client.login(DEV ? config.devToken : config.token)
+if (DEV) {
+  client.login(config.devToken ? config.devToken : config.token)
+} else {
+  client.login(config.token)
+}
