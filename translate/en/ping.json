@@ -1,0 +1,8 @@
+{
+  "prefix": "ping",
+  "pong": {
+    "title": "Pong!",
+    "description": "Took about {{ping}} ms.",
+    "color": 3066993
+  }
+}

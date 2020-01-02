@@ -1,0 +1,32 @@
+{
+  "name": "kats",
+  "version": "0.0.1",
+  "description": "Add some awesome features on your discord!",
+  "main": "index.js",
+  "repository": "https://github.com/Helloyunho/Kats",
+  "author": "Helloyunho",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.3.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  },
+  "dependencies": {
+    "@discordjs/uws": "^11.149.1",
+    "discord.js": "^11.5.1",
+    "erlpack": "hammerandchisel/erlpack",
+    "i18next": "^17.0.14",
+    "i18next-korean-postposition-processor": "^0.4.1",
+    "i18next-sync-fs-backend": "^1.1.1",
+    "node-opus": "^0.3.2",
+    "redis": "^2.8.0",
+    "sodium": "^3.0.2"
+  },
+  "scripts": {
+    "start": "NODE_ENV='production' node index.js",
+    "dev": "NODE_ENV='development' node index.js"
+  }
+}

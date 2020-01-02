@@ -1,0 +1,8 @@
+{
+  "prefix": "핑",
+  "pong": {
+    "title": "퐁!",
+    "description": "{{ping}} ms 정도 걸렸습니다.",
+    "color": 3066993
+  }
+}

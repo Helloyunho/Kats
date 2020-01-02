@@ -1,0 +1,19 @@
+{
+  "token": "Discord Bot Token",
+  "devToken": "Develop bot token(if you don't have any, develop version'll run with your production bot token)",
+  "prefix": {
+    "en": "Kats ",
+    "ko": "카츠야 "
+  },
+  "langs": ["en", "ko"],
+  "defaultLang": "en",
+  "admins": ["Admin(Probably you) ID (Remove quote marks)"],
+  "shard": {
+    "count": "auto",
+    "respawn": true,
+    "delay": 100
+  },
+  "redis": {
+    "Same option as": "node-redis"
+  }
+}

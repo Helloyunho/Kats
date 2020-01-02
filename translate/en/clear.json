@@ -1,0 +1,13 @@
+{
+  "prefix": "clear",
+  "done": {
+    "title": "Cleared! 💨",
+    "description": "Cleaned {{count}} messages include you just typed.",
+    "color": 3066993
+  },
+  "notNumber": {
+    "title": "Error! 🚗💥",
+    "description": "Kats couldn't find any number from your message.",
+    "color": 15158332
+  }
+}
